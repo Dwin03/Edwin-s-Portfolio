@@ -1,0 +1,209 @@
+/* ===== Reset & Base ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  background-color: #0a192f; /* optional: dark theme */
+  color: #ccd6f6;
+}
+
+/* ===== Layout ===== */
+.layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* ===== Sidebar (Left) ===== */
+.sidebar {
+  width: 50%;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; /* center children horizontally */
+  text-align: center;  /* center text inside the sidebar */
+
+  /* Make the sidebar independently scrollable */
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
+  overscroll-behavior-y: contain;    /* prevent scroll chaining to body */
+  max-height: 100vh;
+}
+
+/* ===== Content (Right) ===== */
+.content {
+  width: 50%;
+  margin-left: 50%;
+  padding: 4rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+}
+
+/* ===== Sections ===== */
+section {
+  max-width: 600px;
+}
+
+section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #64ffda;
+}
+
+section p {
+  line-height: 1.6;
+  color: #8892b0;
+}
+
+/* ===== Navigation ===== */
+nav {
+  margin-top: 2rem;
+}
+
+nav a {
+  display: block;
+  margin: 0.5rem 0;
+  text-decoration: none;
+  color: #8892b0;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+/* Button-style for download link — keep its clickable area tight to the visible button */
+.btn {
+  display: inline-block;
+  padding: 0.6rem 1rem;
+  background-color: #64ffda;
+  color: #0a192f;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+}
+
+/* optional: hover state for the button-like anchor */
+.btn:hover {
+  opacity: 0.9;
+}
+
+/* ===== Responsive (Mobile) ===== */
+@media (max-width: 768px) {
+  .layout {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    position: static;
+    width: 100%;
+    height: auto;
+    padding: 2rem;
+
+    align-items: center;
+    text-align: center;
+
+    /* keep touch-smooth scrolling available if needed */
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .content {
+    width: 100%;
+    margin-left: 0;
+    padding: 2rem;
+    gap: 4rem;
+  }
+}
+
+
+
+.btn {
+  padding: 0.6em 2em;
+  border: none;
+  outline: none;
+  color: rgb(255, 255, 255);
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+}
+
+.btn:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowingbn5 20s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+@keyframes glowingbn5 {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.btn:active {
+  color: #000;
+}
+
+.btn:active:after {
+  background: transparent;
+}
+
+.btn:hover:before {
+  opacity: 1;
+}
+
+.btn:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #191919;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
