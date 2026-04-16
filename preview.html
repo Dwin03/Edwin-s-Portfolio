@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Preview</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            padding: 2rem;
+            background: #0a192f;
+        }
+        .preview-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        .preview-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .preview-title {
+            color: #64ffda;
+            font-size: 2rem;
+        }
+        .preview-description {
+            color: #8892b0;
+            line-height: 1.8;
+            max-width: 760px;
+        }
+        .preview-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1rem;
+        }
+        .preview-card {
+            border-radius: 18px;
+            overflow: hidden;
+            background: #112240;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+            min-height: 220px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .preview-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .empty-state {
+            color: #ccd6f6;
+            background: rgba(34, 53, 84, 0.85);
+            padding: 1.5rem;
+            border-radius: 16px;
+            border: 1px solid #233554;
+        }
+    </style>
+</head>
+<body>
+    <div class="preview-container">
+        <div class="preview-header">
+            <div>
+                <h1 class="preview-title" id="projectTitle">Project Preview</h1>
+                <p class="preview-description" id="projectDescription">Screenshots from the projects.</p>
+            </div>
+            <a href="index.html" class="btn">Back to portfolio</a>
+        </div>
+
+        <div id="imageGrid" class="preview-grid"></div>
+        <div id="emptyState" class="empty-state" style="display:none;"></div>
+    </div>
+
+    <script>
+        function getParameterByName(name) {
+            const url = window.location.href;
+            name = name.replace(/[\[\]]/g, '\\$&');
+            const regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)');
+            const results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, ' '));
+        }
+
+        function showEmptyState(message) {
+            const emptyState = document.getElementById('emptyState');
+            emptyState.style.display = 'block';
+            emptyState.textContent = message;
+        }
+
+        function loadProjectPreview(slug, title) {
+            const titleElement = document.getElementById('projectTitle');
+            const description = document.getElementById('projectDescription');
+            const imageGrid = document.getElementById('imageGrid');
+
+            imageGrid.innerHTML = '';
+            document.getElementById('emptyState').style.display = 'none';
+
+            if (!slug) {
+                titleElement.textContent = 'Project preview not found';
+                description.textContent = 'No project was specified for preview.';
+                showEmptyState('Open this page from your portfolio preview button.');
+                return;
+            }
+
+            const folder = `assets/${slug}`;
+            titleElement.textContent = title || slug.replace(/-/g, ' ');
+            
+
+            for (let i = 1; i <= 20; i++) {
+                const src = `${folder}/${i}.jpg`;
+                const img = document.createElement('img');
+                const wrapper = document.createElement('div');
+                wrapper.className = 'preview-card';
+                img.src = src;
+                img.alt = `${title || slug} image ${i}`;
+                img.onload = () => {
+                    // image loaded successfully
+                };
+                img.onerror = () => {
+                    wrapper.remove();
+                };
+                wrapper.appendChild(img);
+                imageGrid.appendChild(wrapper);
+            }
+
+            setTimeout(() => {
+                if (imageGrid.children.length === 0) {
+                    showEmptyState('No preview images were found yet. Add images named 1.jpg, 2.jpg, 3.jpg in the project folder and refresh.');
+                }
+            }, 400);
+        }
+
+        loadProjectPreview(getParameterByName('project'), getParameterByName('title'));
+    </script>
+</body>
+</html>

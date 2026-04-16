@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style.css">
-        <link rel="icon" href="assets\new_profile2.JPG">
+        <link rel="icon" href="assets/new_profile2.JPG" type="image/jpeg">
         <title>Edwin Just's Portfolio</title>
     </head>
     <body>
@@ -72,56 +72,65 @@
 
                 <section id="majorprojects">
                     <h2>Major Projects</h2>
-                    <h3>Steno Interpreter</h3>
-                    <p>
-                        <span><b>Kotlin</b></span> • 
-                        <span><b>XML</b></span> • 
-                        <span><b>Android Studio</b></span> • 
-                        <span><b>SQLite & TFLite Model</b></span>
-                    </p>
-                    <p>Served as Project Manager & Developer. Developed an educational tool using Kotlin + XML for the mobile app and HTML, CSS, PHP for the website to assist 1st year BSOA students of Pamantasan ng Lungsod ng San Pablo in learning shorthand.</p>
-                    <br>
-                    <h3>e-BIDA Mo!</h3>
-                    <p>
-                        <span><b>Kotlin</b></span> • 
-                        <span><b>XML</b></span> • 
-                        <span><b>Android Studio</b></span> • 
-                        <span><b>Google Sheets (as database)</b></span>
-                    </p>
-                    <p> Developed a Kotlin-based Android mobile health tracking application for Barangay Health Workers and residents in Rizal, Laguna. Worked on frontend, backend logic, and UI/UX design using Kotlin + XML, focusing on practical healthcare-related workflows, user interaction, and data handling.</p>
-                    <br>
-                    <h3>Issuance of Sanitary Permit System</h3>
-                    <p>
-                        <span><b>HTML</b></span> • 
-                        <span><b>CSS</b></span> • 
-                        <span><b>JavaScript</b></span> • 
-                        <span><b>PostgreSQL</b></span>
-                    </p>
-                    <p>Acted as Backend Developer & QA Tester. Built a business permit web system using HTML, CSS, and JavaScript, automating the permit generation process. </p>
-                    <br>
-                    <h3>Household Profiling System</h3>
-                    <p>
-                        <span><b>Python</b></span> • 
-                        <span><b>HTML</b></span> • 
-                        <span><b>Tailwind & CSS</b></span> • 
-                        <span><b>PostgreSQL</b></span>
-                    </p>
-                    <p>Contributed to the development of a household data profiling system by implementing frontend components and assisting in QA testing. Worked with HTML, CSS, Tailwind, and Python to support data management workflows and improve system usability.</p>
+                    <div class="project-viewer">
+                        <div class="flash-card" id="majorFlashCard">
+                            <div class="card-front">
+                                <h3 class="card-title" id="majorTitle"></h3>
+                                <p class="card-tags" id="majorTags"></p>
+                                <p class="hint">Click card to reveal description</p>
+                            </div>
+                            <div class="card-back">
+                                <p class="card-description" id="majorDescription"></p>
+                            </div>
+                        </div>
+                        <div class="card-actions">
+                            <button class="nav-btn" id="majorPrev">Previous</button>
+                            <button class="nav-btn" id="majorPreview">Preview</button>
+                            <button class="nav-btn" id="majorNext">Next</button>
+                        </div>
+                        <div class="card-counter"><span id="majorCounter">1 / 1</span></div>
+                    </div>
+                    <div class="project-data-list" id="majorProjectData" hidden>
+                        <div class="project-data" data-slug="steno-interpreter" data-title="Steno Interpreter" data-tags="Kotlin • XML • Android Studio • SQLite & TFLite Model">
+                            <div class="project-description">Served as Project Manager & Developer. Developed an educational tool using Kotlin + XML for the mobile app and HTML, CSS, PHP for the website to assist 1st year BSOA students of Pamantasan ng Lungsod ng San Pablo in learning shorthand.</div>
+                        </div>
+                        <div class="project-data" data-slug="ebida-mo" data-title="e-BIDA Mo!" data-tags="Kotlin • XML • Android Studio • Google Sheets">
+                            <div class="project-description">Developed a Kotlin-based Android mobile health tracking application for Barangay Health Workers and residents in Rizal, Laguna. Worked on frontend, backend logic, and UI/UX design using Kotlin + XML, focusing on practical healthcare-related workflows, user interaction, and data handling.</div>
+                        </div>
+                        <div class="project-data" data-slug="sanitary-permit-system" data-title="Issuance of Sanitary Permit System" data-tags="HTML • CSS • JavaScript • PostgreSQL">
+                            <div class="project-description">Acted as Backend Developer & QA Tester. Built a business permit web system using HTML, CSS, and JavaScript, automating the permit generation process.</div>
+                        </div>
+                        <div class="project-data" data-slug="household-profiling-system" data-title="Household Profiling System" data-tags="Python • HTML • Tailwind & CSS • PostgreSQL">
+                            <div class="project-description">Contributed to the development of a household data profiling system by implementing frontend components and assisting in QA testing. Worked with HTML, CSS, Tailwind, and Python to support data management workflows and improve system usability.</div>
+                        </div>
+                    </div>
                 </section>
 
                 <section id="minorprojects">
                     <h2>Minor Projects</h2>
-                    <h3>Personal Portfolio Website</h3>
-                    <p>
-                        <span><b>HTML</b></span> • 
-                        <span><b>CSS</b></span> • 
-                        <span><b>JavaScript</b></span>
-                    </p>
-                    <p>Developed a Kotlin-based shorthand learning and interpretation application for 1st year BSOA students. Acted as the Project Manager and Main Programmer, leading development and implementing mobile UI features, structured data handling, and specialized educational logic, with supporting web functionality built using HTML, CSS, and PHP.</p>
-                    <br>
-                    <h3></h3>
-                    <p></p>
-
+                    <div class="project-viewer">
+                        <div class="flash-card" id="minorFlashCard">
+                            <div class="card-front">
+                                <h3 class="card-title" id="minorTitle"></h3>
+                                <p class="card-tags" id="minorTags"></p>
+                                <p class="hint">Click card to reveal description</p>
+                            </div>
+                            <div class="card-back">
+                                <p class="card-description" id="minorDescription"></p>
+                            </div>
+                        </div>
+                        <div class="card-actions">
+                            <button class="nav-btn" id="minorPrev">Previous</button>
+                            <button class="nav-btn" id="minorPreview">Preview</button>
+                            <button class="nav-btn" id="minorNext">Next</button>
+                        </div>
+                        <div class="card-counter"><span id="minorCounter">1 / 1</span></div>
+                    </div>
+                    <div class="project-data-list" id="minorProjectData" hidden>
+                        <div class="project-data" data-slug="personal-portfolio" data-title="Personal Portfolio Website" data-tags="HTML • CSS • JavaScript">
+                            <div class="project-description">Developed a personal portfolio website to showcase skills, projects, and experience. Built using HTML, CSS, and JavaScript for a responsive and interactive user experience.</div>
+                        </div>
+                    </div>
                 </section>
 
                 <section id="education">
@@ -137,6 +146,77 @@
                 </section>
             </main>
         </div>
-    
+
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                function getProjectList(prefix) {
+                    const section = document.getElementById(`${prefix}projects`);
+                    const items = Array.from(section.querySelectorAll('.project-data'));
+                    return items.map((item) => ({
+                        slug: item.dataset.slug,
+                        title: item.dataset.title,
+                        tags: item.dataset.tags,
+                        description: item.querySelector('.project-description')?.textContent || ''
+                    }));
+                }
+
+                function setupFlashCards(prefix) {
+                    const projects = getProjectList(prefix);
+                    let currentIndex = 0;
+                    const card = document.getElementById(`${prefix}FlashCard`);
+                    const title = document.getElementById(`${prefix}Title`);
+                    const tags = document.getElementById(`${prefix}Tags`);
+                    const description = document.getElementById(`${prefix}Description`);
+                    const counter = document.getElementById(`${prefix}Counter`);
+                    const prevButton = document.getElementById(`${prefix}Prev`);
+                    const nextButton = document.getElementById(`${prefix}Next`);
+                    const previewButton = document.getElementById(`${prefix}Preview`);
+
+                    function updateCard() {
+                        const project = projects[currentIndex];
+                        title.textContent = project.title;
+                        tags.textContent = project.tags;
+                        description.textContent = project.description;
+                        counter.textContent = `${currentIndex + 1} / ${projects.length}`;
+                        card.classList.remove('is-flipped');
+                        prevButton.disabled = currentIndex === 0;
+                        nextButton.disabled = currentIndex === projects.length - 1;
+                    }
+
+                    card.addEventListener('click', () => {
+                        card.classList.toggle('is-flipped');
+                    });
+
+                    previewButton.addEventListener('click', (event) => {
+                        event.stopPropagation();
+                        const project = projects[currentIndex];
+                        const titleParam = encodeURIComponent(project.title);
+                        const url = `preview.html?project=${encodeURIComponent(project.slug)}&title=${titleParam}`;
+                        window.open(url, '_blank');
+                    });
+
+                    prevButton.addEventListener('click', () => {
+                        if (currentIndex > 0) {
+                            currentIndex -= 1;
+                            updateCard();
+                        }
+                    });
+
+                    nextButton.addEventListener('click', () => {
+                        if (currentIndex < projects.length - 1) {
+                            currentIndex += 1;
+                            updateCard();
+                        }
+                    });
+
+                    if (projects.length > 0) {
+                        updateCard();
+                    }
+                }
+
+                setupFlashCards('major');
+                setupFlashCards('minor');
+            });
+        </script>
     </body>
 </html>
