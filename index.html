@@ -192,7 +192,7 @@
                         const project = projects[currentIndex];
                         const titleParam = encodeURIComponent(project.title);
                         const url = `preview.html?project=${encodeURIComponent(project.slug)}&title=${titleParam}`;
-                        window.open(url, '_blank');
+                        window.location.href = url;
                     });
 
                     prevButton.addEventListener('click', () => {
