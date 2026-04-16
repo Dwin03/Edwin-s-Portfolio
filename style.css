@@ -43,6 +43,15 @@ body {
   max-height: 100vh;
 }
 
+#profile {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #64ffda;
+  margin-bottom: 1rem;
+}
+
 /* ===== Content (Right) ===== */
 .content {
   width: 50%;
@@ -206,4 +215,12 @@ nav a {
   left: 0;
   top: 0;
   border-radius: 10px;
+}
+
+.accounts {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8  px;
+  margin-top: 10px;
 }
