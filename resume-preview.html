@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Preview | Edwin Just B. Teoxon</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            height: 100vh;
+            padding: 0.5rem 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            overflow: hidden;
+        }
+        .resume-toolbar {
+            width: 100%;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        .resume-toolbar h1 {
+            color: #64ffda;
+            margin: 0;
+            font-size: 0.95rem;
+            line-height: 1;
+        }
+        .resume-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 0;
+        }
+        .resume-actions .btn {
+            padding: 0.45rem 0.9rem;
+            font-size: 0.85rem;
+        }
+        .resume-viewer {
+            width: 100%;
+            flex: 1;
+            min-height: 0;
+            margin: 0 auto;
+            border: 1px solid #233554;
+            background: #112240;
+        }
+        .resume-viewer iframe {
+            display: block;
+            width: 100%;
+            height: 100%;
+            min-height: 0;
+            border: 0;
+        }
+        @media (max-width: 600px) {
+            body {
+                padding: 0.5rem;
+                gap: 0.5rem;
+            }
+            .resume-toolbar {
+                align-items: flex-start;
+            }
+            .resume-actions {
+                width: 100%;
+            }
+            .resume-actions .btn {
+                flex: 1;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="resume-toolbar">
+        <h1>Resume Preview</h1>
+        <nav class="resume-actions" aria-label="Resume actions">
+            <a href="index.html" class="btn">Back to portfolio</a>
+        </nav>
+    </header>
+    <main class="resume-viewer">
+        <iframe src="assets/Teoxon,%20Edwin%20Just%20B._Resume.pdf" title="Edwin Just B. Teoxon's resume">
+            <p>Your browser cannot display the resume. <a href="assets/Teoxon,%20Edwin%20Just%20B._Resume.pdf" download>Download the resume</a>.</p>
+        </iframe>
+    </main>
+</body>
+</html>
